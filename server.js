@@ -255,7 +255,7 @@ wsServer.on('request', function(request) {
                                 data = message.data.split(";");
                                 opponent_id = data[0];
                                 player.setOpponent(opponent_id);
-                                Players[player.opponentIndex].connection.sendUTF(JSON.stringify({'action':'choosepocket',  'data': data[1]
+                                Players[player.opponentIndex].connection.sendUTF(JSON.stringify({'action':'choosepocket',  'data': (player.name).concat(";").concat(data[1])
                                
                                 }));
                         
